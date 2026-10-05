@@ -28,6 +28,10 @@ def page(title, desc, body, root=""):
 <title>{html.escape(title)}</title>
 <meta name="description" content="{html.escape(desc)}">
 {FONTS}
+<link rel="icon" href="{root}favicon.ico" sizes="48x48">
+<link rel="icon" type="image/png" sizes="32x32" href="{root}favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="{root}favicon-192.png">
+<link rel="apple-touch-icon" href="{root}apple-touch-icon.png">
 <link rel="stylesheet" href="{root}styles.css">
 </head>
 <body>
