@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FØRST — Syntal</title>
+<meta name="description" content="Сайт архитектурного бюро. Здесь задача другая: показать уровень, чтобы заказчик с крупным объектом захотел встретиться.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Onest:wght@400;500;600&family=Unbounded:wght@500;600&display=swap">
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <a class="brand" href="../index.html">Syntal<i>.</i></a>
+  <nav class="nav"><a href="../index.html#calc">Калькулятор</a><a href="../index.html#sites">Сайты</a><a href="../index.html#dashboards">Дашборды и системы</a><a href="../index.html#contacts">Контакты</a></nav>
+  <a class="btn small" href="../index.html#contacts">Обсудить проект</a>
+</div></header>
+<main><div class="wrap">
+  <a class="crumb" href="../index.html#sites">← Все сайты</a>
+  <div class="case-hero"><span class="tag">Архитектура · Махачкала</span><h1 style="margin-top:14px">FØRST: сайт архитектурного бюро, где здание раскрывается по скроллу</h1><p class="lede">Бюро из Махачкалы хотело сайт уровня мировых студий. Такой, чтобы заказчик с крупным объектом ещё до звонка понял, с кем имеет дело.</p>
+  <div class="hero-actions"><a class="btn ghost" href="https://scroll-scrub-nine.vercel.app/" target="_blank" rel="noopener">Открыть сайт ↗</a></div></div>
+  <div class="frame-wide"><div class="frame"><div class="frame-bar"><i></i><i></i><i></i><span>scroll-scrub-nine.vercel.app</span></div><div class="slides"><img src="../assets/shots/forst-1.jpg" alt="FØRST, экран 1" width="1440" height="900"><img src="../assets/shots/forst-2.jpg" alt="FØRST, экран 2" loading="lazy" width="1440" height="900"><img src="../assets/shots/forst-3.jpg" alt="FØRST, экран 3" loading="lazy" width="1440" height="900"><img src="../assets/shots/forst-5.jpg" alt="FØRST, экран 4" loading="lazy" width="1440" height="900"></div><div class="dots"></div></div></div>
+  <section class="tight"><h2>С чем пришли</h2><div class="story"><p>У архитектурного бюро сайт работает иначе, чем у магазина. Сюда не приходят купить. Сюда приходит человек, который собирается доверить кому-то дом или целый квартал и хочет за пару минут понять уровень.</p><p>Заказчик так и сформулировал: премиальный, минималистичный, технологичный сайт по канонам лучших мировых бюро, весь на русском и с живой анимацией.</p></div></section>
+  <section class="tight"><h2>Что нужно было решить</h2><ul class="tasks"><li>С первого экрана показать, что бюро думает как инженеры, а не только рисует красивые картинки</li><li>Сделать сложную анимацию, которая не тормозит на обычном телефоне</li><li>Оставить навигацию простой: посмотреть проекты, понять подход, написать</li></ul></section>
+  <section class="tight"><h2>Что сделали и почему</h2><div class="decisions"><div class="decision"><h3>Главная идея: от объёма к чертежу</h3><p>Пока вы листаете страницу, фотореалистичный дом на экране постепенно превращается в технический чертёж. Это и есть сообщение бюро: за каждой красивой картинкой стоит расчёт. Объяснять это словами было бы скучно, поэтому показываем.</p></div><div class="decision"><h3>Кадры вместо видео</h3><p>Проще всего было положить видео и перематывать его скроллом. С этого и начали, и это не сработало: браузеры перематывают видео рывками, кадр не совпадает с положением страницы. Поэтому анимация собрана из 121 отдельного кадра, которые рисуются на холсте. Какой кадр показать, решает положение скролла, и движение получается ровным в любом браузере.</p></div><div class="decision"><h3>Не ждать, пока всё загрузится</h3><p>В первой версии страница ждала все кадры и только потом оживала. Переделали: анимация работает уже после первого кадра, остальные подгружаются в фоне, а если нужный ещё не приехал, показываем ближайший загруженный. Сами кадры уменьшили до 720p. В полном разрешении они занимали около гигабайта памяти, и ноутбук с 8 ГБ зависал.</p></div><div class="decision"><h3>Меню на весь экран</h3><p>На телефоне ссылки из шапки попросту не помещались. Вместо двух разных меню для компьютера и телефона сделали одно: кнопка справа раскрывает меню на весь экран. Так устроены сайты MVRDV и BIG, и для бюро это привычный язык.</p></div><div class="decision"><h3>Курсор, который видно на любом фоне</h3><p>У сайта свой курсор, белый кружок. На тёмных экранах он смотрелся отлично, а на светлых исчезал. Теперь курсор сам понимает, над каким фоном находится, и меняет цвет на контрастный. Мелочь, но без неё на половине сайта не видно, куда наводишь.</p></div><div class="decision"><h3>Бесплатные шрифты</h3><p>Заказчик попросил на старте не тратиться на шрифтовые лицензии. Взяли Geist: строгий технологичный гротеск, который попадает в характер бюро и ничего не стоит.</p></div></div></section>
+  <section class="tight"><h2>Что в итоге</h2><div class="story"><p>Сайт собран целиком и работает. Тексты и проекты на нём пока демонстрационные: материалы бюро встают на их место без переделки страниц.</p></div></section>
+  <section><div class="cta"><h2>Хотите так же разобрать ваш сайт?</h2><p>Десять минут по видео: откроем ваш сайт или карточку в 2ГИС и покажем, где теряются заявки и что с этим сделать.</p><div class="hero-actions"><a class="btn " href="https://wa.me/79285137450" target="_blank" rel="noopener">Написать в WhatsApp</a><a class="btn ghost " href="https://t.me/iapheth" target="_blank" rel="noopener">Telegram</a></div></div></section>
+</div></main>
+<footer><div class="wrap">Syntal · сайты, дашборды и ИИ-ассистенты для бизнеса. В демо-дашбордах все цифры и имена вымышлены.</div></footer>
+<script src="../demo.js"></script>
+</body>
+</html>
