@@ -344,6 +344,22 @@ for s in SITES:
     open(os.path.join(HERE, "cases", s["slug"] + ".html"), "w", encoding="utf-8").write(page(f'{s["title"]} — {BRAND}', s["lead"], site_page(s), root="../"))
 for c in CASES:
     open(os.path.join(HERE, "cases", c["slug"] + ".html"), "w", encoding="utf-8").write(page(f'{c["title"]} — {BRAND}', c["short"], dash_page(c), root="../"))
+# old addresses keep working: each one forwards to the page that replaced it
+MOVED = {"crm": "real2", "sales": "shop", "network": "finance"}
+for old, new in MOVED.items():
+    open(os.path.join(HERE, "cases", old + ".html"), "w", encoding="utf-8").write(
+        f'<!doctype html>\n<html lang="ru"><head><meta charset="utf-8"><meta http-equiv="refresh" content="0; url={new}.html">'
+        f'<link rel="canonical" href="{new}.html"><title>Страница переехала</title></head>'
+        f'<body><p><a href="{new}.html">Страница переехала. Открыть</a></p></body></html>\n')
+# GitHub Pages serves this for any missing address; paths are absolute because the missing URL can be at any depth
+SITE_ROOT = "/portfolio/"
+lost = f'''<main><div class="wrap hero">
+  <p class="eyebrow">Ошибка 404</p>
+  <h1>Такой страницы нет</h1>
+  <p class="lede">Возможно, адрес изменился. Все работы собраны на главной.</p>
+  <div class="hero-actions"><a class="btn accent" href="{SITE_ROOT}index.html">На главную</a><a class="btn ghost" href="{SITE_ROOT}index.html#dashboards">Дашборды и системы</a></div>
+</div></main>'''
+open(os.path.join(HERE, "404.html"), "w", encoding="utf-8").write(page(f"Страница не найдена — {BRAND}", "Такой страницы нет.", lost, root=SITE_ROOT))
 keep = {f'{s["key"]}-{n}.jpg' for s in SITES for n in s["frames"]}
 for f in os.listdir(os.path.join(HERE, "assets", "shots")):
     if f not in keep:
